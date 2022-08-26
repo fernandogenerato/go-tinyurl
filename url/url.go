@@ -22,8 +22,8 @@ type Repository interface {
 
 type Url struct {
 	Id      string    `json:"id"`
-	Created time.Time `json:"criacao"`
-	Final   string    `json:"destino"`
+	Created time.Time `json:"Created"`
+	Final   string    `json:"Final"`
 }
 
 type Stats struct {

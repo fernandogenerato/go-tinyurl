@@ -5,6 +5,10 @@ type repositoryMemory struct {
 	clicks map[string]int
 }
 
+func (r *repositoryMemory) FindByClick(id string) int {
+	return r.clicks[id]
+}
+
 func NewMemoryRepository() *repositoryMemory {
 	return &repositoryMemory{
 		make(map[string]*Url),
@@ -13,8 +17,8 @@ func NewMemoryRepository() *repositoryMemory {
 }
 
 func (r *repositoryMemory) HasId(id string) bool {
-	_, existe := r.urls[id]
-	return existe
+	_, has := r.urls[id]
+	return has
 }
 
 func (r *repositoryMemory) FindById(id string) *Url {
